@@ -62,6 +62,40 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D204850D1A654FC7000C3DE6 /* Macro */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Macro;
+			path = ..;
+			sourceTree = "<group>";
+		};
+		D204850E1A654FE3000C3DE6 /* General */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = General;
+			sourceTree = "<group>";
+		};
+		D204850F1A654FEC000C3DE6 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Helpers;
+			sourceTree = "<group>";
+		};
+		D20485101A655009000C3DE6 /* Sections */ = {
+			isa = PBXGroup;
+			children = (
+				D2B9938E1A653B58000146E9 /* ViewController.h */,
+				D2B9938F1A653B58000146E9 /* ViewController.m */,
+				D2B993911A653B58000146E9 /* Main.storyboard */,
+				D2B993941A653B58000146E9 /* Images.xcassets */,
+				D2B993961A653B58000146E9 /* LaunchScreen.xib */,
+			);
+			name = Sections;
+			sourceTree = "<group>";
+		};
 		D2B993781A653B58000146E9 = {
 			isa = PBXGroup;
 			children = (
@@ -83,14 +117,12 @@
 		D2B993831A653B58000146E9 /* MyNoteBook */ = {
 			isa = PBXGroup;
 			children = (
+				D20485101A655009000C3DE6 /* Sections */,
+				D204850F1A654FEC000C3DE6 /* Helpers */,
+				D204850E1A654FE3000C3DE6 /* General */,
+				D204850D1A654FC7000C3DE6 /* Macro */,
 				D2B993AE1A653BCD000146E9 /* Models */,
 				D2B993AD1A653BB0000146E9 /* AppDelegate */,
-				D2B9938E1A653B58000146E9 /* ViewController.h */,
-				D2B9938F1A653B58000146E9 /* ViewController.m */,
-				D2B993911A653B58000146E9 /* Main.storyboard */,
-				D2B993941A653B58000146E9 /* Images.xcassets */,
-				D2B993961A653B58000146E9 /* LaunchScreen.xib */,
-				D2B9938B1A653B58000146E9 /* MyNoteBook.xcdatamodeld */,
 				D2B993841A653B58000146E9 /* Supporting Files */,
 			);
 			path = MyNoteBook;
@@ -134,6 +166,7 @@
 		D2B993AE1A653BCD000146E9 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				D2B9938B1A653B58000146E9 /* MyNoteBook.xcdatamodeld */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -432,6 +465,7 @@
 				D2B993A91A653B58000146E9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D2B993AA1A653B58000146E9 /* Build configuration list for PBXNativeTarget "MyNoteBookTests" */ = {
 			isa = XCConfigurationList;
@@ -440,6 +474,7 @@
 				D2B993AC1A653B58000146E9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
