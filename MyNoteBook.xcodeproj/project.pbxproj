@@ -7,9 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D27A92AA1A65573300F7E546 /* MyNoteBook.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D2B9938B1A653B58000146E9 /* MyNoteBook.xcdatamodeld */; };
 		D2B993871A653B58000146E9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D2B993861A653B58000146E9 /* main.m */; };
 		D2B9938A1A653B58000146E9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D2B993891A653B58000146E9 /* AppDelegate.m */; };
-		D2B9938D1A653B58000146E9 /* MyNoteBook.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D2B9938B1A653B58000146E9 /* MyNoteBook.xcdatamodeld */; };
 		D2B993901A653B58000146E9 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D2B9938F1A653B58000146E9 /* ViewController.m */; };
 		D2B993931A653B58000146E9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D2B993911A653B58000146E9 /* Main.storyboard */; };
 		D2B993951A653B58000146E9 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D2B993941A653B58000146E9 /* Images.xcassets */; };
@@ -31,13 +31,13 @@
 		D2B993811A653B58000146E9 /* MyNoteBook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyNoteBook.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2B993851A653B58000146E9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D2B993861A653B58000146E9 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		D2B993881A653B58000146E9 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		D2B993891A653B58000146E9 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		D2B993881A653B58000146E9 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = MyNoteBook/AppDelegate/AppDelegate.h; sourceTree = SOURCE_ROOT; };
+		D2B993891A653B58000146E9 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = MyNoteBook/AppDelegate/AppDelegate.m; sourceTree = SOURCE_ROOT; };
 		D2B9938C1A653B58000146E9 /* MyNoteBook.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MyNoteBook.xcdatamodel; sourceTree = "<group>"; };
 		D2B9938E1A653B58000146E9 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		D2B9938F1A653B58000146E9 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		D2B993921A653B58000146E9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		D2B993941A653B58000146E9 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		D2B993941A653B58000146E9 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = ../Images.xcassets; sourceTree = "<group>"; };
 		D2B993971A653B58000146E9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		D2B9939D1A653B58000146E9 /* MyNoteBookTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MyNoteBookTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2B993A21A653B58000146E9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -62,29 +62,7 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		D204850D1A654FC7000C3DE6 /* Macro */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Macro;
-			path = ..;
-			sourceTree = "<group>";
-		};
-		D204850E1A654FE3000C3DE6 /* General */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = General;
-			sourceTree = "<group>";
-		};
-		D204850F1A654FEC000C3DE6 /* Helpers */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Helpers;
-			sourceTree = "<group>";
-		};
-		D20485101A655009000C3DE6 /* Sections */ = {
+		D27A92A61A6555E200F7E546 /* Sections */ = {
 			isa = PBXGroup;
 			children = (
 				D2B9938E1A653B58000146E9 /* ViewController.h */,
@@ -93,7 +71,23 @@
 				D2B993941A653B58000146E9 /* Images.xcassets */,
 				D2B993961A653B58000146E9 /* LaunchScreen.xib */,
 			);
-			name = Sections;
+			path = Sections;
+			sourceTree = "<group>";
+		};
+		D27A92A71A65563000F7E546 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		D27A92A81A65565700F7E546 /* AppDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				D2B993881A653B58000146E9 /* AppDelegate.h */,
+				D2B993891A653B58000146E9 /* AppDelegate.m */,
+			);
+			path = AppDelegate;
 			sourceTree = "<group>";
 		};
 		D2B993781A653B58000146E9 = {
@@ -117,12 +111,10 @@
 		D2B993831A653B58000146E9 /* MyNoteBook */ = {
 			isa = PBXGroup;
 			children = (
-				D20485101A655009000C3DE6 /* Sections */,
-				D204850F1A654FEC000C3DE6 /* Helpers */,
-				D204850E1A654FE3000C3DE6 /* General */,
-				D204850D1A654FC7000C3DE6 /* Macro */,
-				D2B993AE1A653BCD000146E9 /* Models */,
-				D2B993AD1A653BB0000146E9 /* AppDelegate */,
+				D2B9938B1A653B58000146E9 /* MyNoteBook.xcdatamodeld */,
+				D27A92A81A65565700F7E546 /* AppDelegate */,
+				D27A92A71A65563000F7E546 /* Models */,
+				D27A92A61A6555E200F7E546 /* Sections */,
 				D2B993841A653B58000146E9 /* Supporting Files */,
 			);
 			path = MyNoteBook;
@@ -152,23 +144,6 @@
 				D2B993A21A653B58000146E9 /* Info.plist */,
 			);
 			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		D2B993AD1A653BB0000146E9 /* AppDelegate */ = {
-			isa = PBXGroup;
-			children = (
-				D2B993881A653B58000146E9 /* AppDelegate.h */,
-				D2B993891A653B58000146E9 /* AppDelegate.m */,
-			);
-			name = AppDelegate;
-			sourceTree = "<group>";
-		};
-		D2B993AE1A653BCD000146E9 /* Models */ = {
-			isa = PBXGroup;
-			children = (
-				D2B9938B1A653B58000146E9 /* MyNoteBook.xcdatamodeld */,
-			);
-			name = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -272,8 +247,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				D2B9938A1A653B58000146E9 /* AppDelegate.m in Sources */,
-				D2B9938D1A653B58000146E9 /* MyNoteBook.xcdatamodeld in Sources */,
 				D2B993901A653B58000146E9 /* ViewController.m in Sources */,
+				D27A92AA1A65573300F7E546 /* MyNoteBook.xcdatamodeld in Sources */,
 				D2B993871A653B58000146E9 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -303,6 +278,7 @@
 				D2B993921A653B58000146E9 /* Base */,
 			);
 			name = Main.storyboard;
+			path = ..;
 			sourceTree = "<group>";
 		};
 		D2B993961A653B58000146E9 /* LaunchScreen.xib */ = {
@@ -311,6 +287,7 @@
 				D2B993971A653B58000146E9 /* Base */,
 			);
 			name = LaunchScreen.xib;
+			path = ..;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -488,6 +465,7 @@
 			path = MyNoteBook.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
+			wrapsLines = 1;
 		};
 /* End XCVersionGroup section */
 	};
