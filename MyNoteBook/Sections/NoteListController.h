@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  NoteListController.h
 //  MyNoteBook
 //
 //  Created by TaoZeyu on 15/1/13.
@@ -8,8 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
-
+@interface NoteListController : UITableViewController
 
 @end
-
