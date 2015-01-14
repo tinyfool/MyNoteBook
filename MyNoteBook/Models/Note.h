@@ -19,4 +19,6 @@
 @property (nonatomic, retain) NSString * title;
 @property (nonatomic, retain) Group *group;
 
+-(void)valuesInitWithTitle:(NSString *)title withContent:(NSString *)content withGroup:(Group *)group;
+
 @end

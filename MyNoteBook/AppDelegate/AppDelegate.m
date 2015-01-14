@@ -7,6 +7,9 @@
 //
 
 #import "AppDelegate.h"
+#import "AppMacro.h"
+
+#import "Group.h"
 
 @interface AppDelegate ()
 
@@ -16,8 +19,10 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
-    return YES;
+    
+    BOOL insertSuccess = [Group insertDefaultGroupIfFirstLaunch:self];
+    
+    return insertSuccess;
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {

@@ -9,6 +9,8 @@
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
 
+#import "AppDelegate.h"
+
 @class Note;
 
 @interface Group : NSManagedObject
@@ -16,5 +18,9 @@
 @property (nonatomic, retain) NSDate * createAt;
 @property (nonatomic, retain) NSString * name;
 @property (nonatomic, retain) Note *notes;
+
+-(void) valuesInitWithName:(NSString *)name;
++(BOOL) insertDefaultGroupIfFirstLaunch:(AppDelegate *) appDelegate;
++(Group *) getDefaultGroup:(NSManagedObjectContext *)context;
 
 @end

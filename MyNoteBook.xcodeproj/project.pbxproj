@@ -48,6 +48,7 @@
 		D2B9939D1A653B58000146E9 /* MyNoteBookTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MyNoteBookTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2B993A21A653B58000146E9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D2B993A31A653B58000146E9 /* MyNoteBookTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyNoteBookTests.m; sourceTree = "<group>"; };
+		D2C64F051A66B17800F62879 /* AppMacro.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppMacro.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +103,7 @@
 		D2B993781A653B58000146E9 = {
 			isa = PBXGroup;
 			children = (
+				D2C64F041A66B15000F62879 /* Macro */,
 				D2B993831A653B58000146E9 /* MyNoteBook */,
 				D2B993A01A653B58000146E9 /* MyNoteBookTests */,
 				D2B993821A653B58000146E9 /* Products */,
@@ -154,6 +156,15 @@
 				D2B993A21A653B58000146E9 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		D2C64F041A66B15000F62879 /* Macro */ = {
+			isa = PBXGroup;
+			children = (
+				D2C64F051A66B17800F62879 /* AppMacro.h */,
+			);
+			name = Macro;
+			path = MyNoteBook/Macro;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

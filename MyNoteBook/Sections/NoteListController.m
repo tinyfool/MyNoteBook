@@ -7,21 +7,37 @@
 //
 
 #import "NoteListController.h"
+#import "AppDelegate.h"
+
+#import "Group.h"
 
 @implementation NoteListController
 
 -(void)viewDidLoad
 {
-    NSLog(@"view did load.");
-    
-    
     
 }
 
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-
+    [self showNotesInDefaultGroup];
     return [super numberOfSectionsInTableView:tableView];
+}
+
+-(NSManagedObjectContext *) getContext
+{
+    AppDelegate *appDelegate = [UIApplication sharedApplication].delegate;
+    return [appDelegate managedObjectContext];
+}
+
+-(void) showNotesInDefaultGroup
+{
+    NSManagedObjectContext *context = [self getContext];
+    [self showNotesInGroup: [Group getDefaultGroup:context]];
+}
+
+-(void) showNotesInGroup:(Group *) group
+{
 }
 
 @end

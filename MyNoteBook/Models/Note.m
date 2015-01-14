@@ -18,16 +18,13 @@
 @dynamic title;
 @dynamic group;
 
--(instancetype)initWithTitle:(NSString *)title withContent:(NSString *)content withGroup:(Group *)group
+-(void)valuesInitWithTitle:(NSString *)title withContent:(NSString *)content withGroup:(Group *)group
 {
-    self = [super init];
-    if(self) {
-        self.title = title;
-        self.content = content;
-        self.group = group;
-        [self setCreateAndEditTimeToCurrent];
-    }
-    return self;
+    self.title = title;
+    self.content = content;
+    self.group = group;
+    [self setCreateAndEditTimeToCurrent];
+
 }
 
 -(void)setCreateAndEditTimeToCurrent
