@@ -2,13 +2,15 @@
 //  Group.m
 //  MyNoteBook
 //
-//  Created by TaoZeyu on 15/1/13.
+//  Created by TaoZeyu on 15/1/16.
 //  Copyright (c) 2015年 TaoZeyu. All rights reserved.
 //
+
 #import "Group.h"
 #import "Note.h"
 
 #import "AppMacro.h"
+
 
 @implementation Group
 
@@ -16,10 +18,16 @@
 @dynamic name;
 @dynamic notes;
 
--(void) valuesInitWithName:(NSString *)name
+-(void)valuesInitWithName:(NSString *) name
 {
     self.name = name;
     self.createAt = [NSDate date];
+}
+
+-(NSArray *)listNotes
+{
+    NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"createAt" ascending:NO];
+    return [self.notes sortedArrayUsingDescriptors:[NSArray arrayWithObjects:sortDescriptor, nil]];
 }
 
 +(BOOL) insertDefaultGroupIfFirstLaunch:(AppDelegate *) appDelegate
@@ -29,15 +37,20 @@
     NSError *error;
     NSUInteger count = [context countForFetchRequest:[self getFindDefaultGroupRequest] error: &error];
     
-    if(count == NSNotFound) {
-        Group *defualtGroup = [NSEntityDescription
+    if(count == 0) {
+        Group *defaultGroup = [NSEntityDescription
                                insertNewObjectForEntityForName: @"Group"
                                inManagedObjectContext: context];
         
-        [defualtGroup valuesInitWithName:DefaultGroupName];
-        [appDelegate saveContext];
+        [defaultGroup valuesInitWithName:DefaultGroupName];
+        
+        BOOL success = [context save: &error];
+        
+        if(!success) {
+            NSLog(@"error: %@", error.localizedDescription);
+            return NO;
+        }
     }
-    
     return YES;
 }
 
@@ -58,10 +71,11 @@
 {
     NSFetchRequest *request = [[NSFetchRequest alloc] initWithEntityName: @"Group"];
     
-    NSPredicate *pred = [NSPredicate predicateWithFormat: @"(name = %s)", DefaultGroupName];
+    NSPredicate *pred = [NSPredicate predicateWithFormat: @"(name = %@)", DefaultGroupName];
     [request setPredicate: pred];
     
     return request;
 }
+
 
 @end

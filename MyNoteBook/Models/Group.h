@@ -2,7 +2,7 @@
 //  Group.h
 //  MyNoteBook
 //
-//  Created by TaoZeyu on 15/1/13.
+//  Created by TaoZeyu on 15/1/16.
 //  Copyright (c) 2015年 TaoZeyu. All rights reserved.
 //
 
@@ -17,9 +17,19 @@
 
 @property (nonatomic, retain) NSDate * createAt;
 @property (nonatomic, retain) NSString * name;
-@property (nonatomic, retain) Note *notes;
+@property (nonatomic, retain) NSSet *notes;
+@end
 
--(void) valuesInitWithName:(NSString *)name;
+@interface Group (CoreDataGeneratedAccessors)
+
+-(void)valuesInitWithName:(NSString *)name;
+-(NSArray *)listNotes;
+
+- (void)addNotesObject:(Note *)value;
+- (void)removeNotesObject:(Note *)value;
+- (void)addNotes:(NSSet *)values;
+- (void)removeNotes:(NSSet *)values;
+
 +(BOOL) insertDefaultGroupIfFirstLaunch:(AppDelegate *) appDelegate;
 +(Group *) getDefaultGroup:(NSManagedObjectContext *)context;
 

@@ -9,18 +9,24 @@
 #import "NoteListController.h"
 #import "AppDelegate.h"
 
+#import "Note.h"
 #import "Group.h"
+
+@interface NoteListController ()
+
+@property NSArray *notes;
+
+@end
 
 @implementation NoteListController
 
 -(void)viewDidLoad
 {
-    
+    [self showNotesInDefaultGroup];
 }
 
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    [self showNotesInDefaultGroup];
     return [super numberOfSectionsInTableView:tableView];
 }
 
@@ -34,10 +40,31 @@
 {
     NSManagedObjectContext *context = [self getContext];
     [self showNotesInGroup: [Group getDefaultGroup:context]];
+    [self reloadInputViews];
 }
 
 -(void) showNotesInGroup:(Group *) group
 {
+    self.notes = [group listNotes];
 }
 
+-(NSInteger)tableView:(UITableView *)tableView indentationLevelForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return [self.notes count];
+}
+
+-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    static NSString *SimpleTableIdentifier = @"SimpleTableIdentifier";
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:SimpleTableIdentifier];
+    
+    if(cell == nil)
+    {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault
+                                      reuseIdentifier:SimpleTableIdentifier];
+    }
+    cell.textLabel.text = [(Note *)self.notes[indexPath.row] title];
+    
+    return cell;
+}
 @end

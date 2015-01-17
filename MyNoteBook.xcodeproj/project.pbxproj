@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D23C13AB1A69692B00284892 /* Group.m in Sources */ = {isa = PBXBuildFile; fileRef = D23C13AA1A69692B00284892 /* Group.m */; };
 		D27A92AA1A65573300F7E546 /* MyNoteBook.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D2B9938B1A653B58000146E9 /* MyNoteBook.xcdatamodeld */; };
-		D27E030A1A655B2D00E2A3BC /* Group.m in Sources */ = {isa = PBXBuildFile; fileRef = D27E03091A655B2D00E2A3BC /* Group.m */; };
 		D27E030D1A655B2E00E2A3BC /* Note.m in Sources */ = {isa = PBXBuildFile; fileRef = D27E030C1A655B2E00E2A3BC /* Note.m */; };
 		D27E03121A65637300E2A3BC /* NoteListController.m in Sources */ = {isa = PBXBuildFile; fileRef = D27E03111A65637300E2A3BC /* NoteListController.m */; };
 		D2B993871A653B58000146E9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D2B993861A653B58000146E9 /* main.m */; };
@@ -30,8 +30,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		D27E03081A655B2D00E2A3BC /* Group.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Group.h; sourceTree = "<group>"; };
-		D27E03091A655B2D00E2A3BC /* Group.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Group.m; sourceTree = "<group>"; };
+		D23C13A91A69692B00284892 /* Group.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Group.h; sourceTree = "<group>"; };
+		D23C13AA1A69692B00284892 /* Group.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Group.m; sourceTree = "<group>"; };
 		D27E030B1A655B2E00E2A3BC /* Note.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Note.h; sourceTree = "<group>"; };
 		D27E030C1A655B2E00E2A3BC /* Note.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Note.m; sourceTree = "<group>"; };
 		D27E03101A65637300E2A3BC /* NoteListController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NoteListController.h; sourceTree = "<group>"; };
@@ -85,8 +85,8 @@
 			children = (
 				D27E030B1A655B2E00E2A3BC /* Note.h */,
 				D27E030C1A655B2E00E2A3BC /* Note.m */,
-				D27E03081A655B2D00E2A3BC /* Group.h */,
-				D27E03091A655B2D00E2A3BC /* Group.m */,
+				D23C13A91A69692B00284892 /* Group.h */,
+				D23C13AA1A69692B00284892 /* Group.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -103,7 +103,6 @@
 		D2B993781A653B58000146E9 = {
 			isa = PBXGroup;
 			children = (
-				D2C64F041A66B15000F62879 /* Macro */,
 				D2B993831A653B58000146E9 /* MyNoteBook */,
 				D2B993A01A653B58000146E9 /* MyNoteBookTests */,
 				D2B993821A653B58000146E9 /* Products */,
@@ -122,6 +121,7 @@
 		D2B993831A653B58000146E9 /* MyNoteBook */ = {
 			isa = PBXGroup;
 			children = (
+				D2C64F041A66B15000F62879 /* Macro */,
 				D2B993941A653B58000146E9 /* Images.xcassets */,
 				D2B9938B1A653B58000146E9 /* MyNoteBook.xcdatamodeld */,
 				D27A92A81A65565700F7E546 /* AppDelegate */,
@@ -163,8 +163,7 @@
 			children = (
 				D2C64F051A66B17800F62879 /* AppMacro.h */,
 			);
-			name = Macro;
-			path = MyNoteBook/Macro;
+			path = Macro;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -269,8 +268,8 @@
 			files = (
 				D2B9938A1A653B58000146E9 /* AppDelegate.m in Sources */,
 				D27E03121A65637300E2A3BC /* NoteListController.m in Sources */,
-				D27E030A1A655B2D00E2A3BC /* Group.m in Sources */,
 				D27E030D1A655B2E00E2A3BC /* Note.m in Sources */,
+				D23C13AB1A69692B00284892 /* Group.m in Sources */,
 				D27A92AA1A65573300F7E546 /* MyNoteBook.xcdatamodeld in Sources */,
 				D2B993871A653B58000146E9 /* main.m in Sources */,
 			);
