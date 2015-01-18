@@ -14,6 +14,7 @@
 
 -(NSManagedObjectContext *) getContext;
 -(void)saveContext;
+-(BOOL)showCreateNewLine;
 -(void)resetInfoArray:(NSArray *)infoArray;
 -(void)setInfoToCell:(UITableViewCell *)cell from:(id)info;
 -(void)clickCreateLine;

@@ -31,6 +31,8 @@
 - (void)removeNotes:(NSSet *)values;
 
 +(BOOL) insertDefaultGroupIfFirstLaunch:(AppDelegate *) appDelegate;
++(Group *) createGroupWithName:(NSString *)name inContext:(NSManagedObjectContext *)context;
 +(Group *) getDefaultGroup:(NSManagedObjectContext *)context;
++(NSArray *)listAllGroups:(NSManagedObjectContext *)context;
 
 @end

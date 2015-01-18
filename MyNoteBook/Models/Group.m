@@ -26,7 +26,7 @@
 
 -(NSArray *)listNotes
 {
-    NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"createAt" ascending:NO];
+    NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"name" ascending:NO];
     return [self.notes sortedArrayUsingDescriptors:[NSArray arrayWithObjects:sortDescriptor, nil]];
 }
 
@@ -54,6 +54,27 @@
     return YES;
 }
 
++(Group *) createGroupWithName:(NSString *)name inContext:(NSManagedObjectContext *)context
+{
+    NSFetchRequest *request = [[NSFetchRequest alloc] initWithEntityName: @"Group"];
+    NSPredicate *pred = [NSPredicate predicateWithFormat: @"(name = %@)", name];
+    
+    NSError *error;
+    [request setPredicate:pred];
+    NSUInteger count = [context countForFetchRequest:request error: &error];
+    
+    if(count > 0) {
+        NSLog(@"Error, Group '%@' count : %lu", name, count);
+        return nil;
+    }
+    Group *group = [NSEntityDescription
+                    insertNewObjectForEntityForName:@"Group"
+                    inManagedObjectContext:context];
+    [group valuesInitWithName:name];
+    
+    return group;
+}
+
 +(Group *) getDefaultGroup:(NSManagedObjectContext *)context
 {
     NSError *error;
@@ -75,6 +96,21 @@
     [request setPredicate: pred];
     
     return request;
+}
+
++(NSArray *)listAllGroups:(NSManagedObjectContext *)context
+{
+    NSFetchRequest *request = [[NSFetchRequest alloc] initWithEntityName: @"Group"];
+    
+    NSError *error;
+    NSArray *resultArray = [context executeFetchRequest:request error:&error];
+    
+    if(resultArray == nil)
+    {
+        NSLog(@"Group List Select Error:%@", [error localizedDescription]);
+        return nil;
+    }
+    return resultArray;
 }
 
 

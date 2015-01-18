@@ -44,13 +44,22 @@
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return [self.infoArray count] + 1;
+    if(self.showCreateNewLine) {
+        return [self.infoArray count] + 1;
+    } else {
+        return [self.infoArray count];
+    }
 }
 
 -(void)resetInfoArray:(NSArray *)infoArray
 {
     self.infoArray = infoArray;
     [self.tableView reloadData];
+}
+
+-(BOOL)showCreateNewLine
+{
+    return YES;
 }
 
 -(void)setInfoToCell:(UITableViewCell *)cell from:(id)info
@@ -91,10 +100,14 @@
         
         [self registerEventsFromCell:cell indexPath:indexPath];
     }
-    if(indexPath.row == 0) {
-        [self setCreateToCell:cell];
+    if(self.showCreateNewLine) {
+        if(indexPath.row == 0) {
+            [self setCreateToCell:cell];
+        } else {
+            [self setInfoToCell:cell from:self.infoArray[indexPath.row - 1]];
+        }
     } else {
-        [self setInfoToCell:cell from:self.infoArray[indexPath.row - 1]];
+        [self setInfoToCell:cell from:self.infoArray[indexPath.row]];
     }
     
     return cell;
@@ -121,10 +134,14 @@
 {
     NSInteger index = [self getCellIndexFromEvent:tap];
     
-    if(index == 0) {
-        [self clickCreateLine];
+    if(self.showCreateNewLine) {
+        if(index == 0) {
+            [self clickCreateLine];
+        } else {
+            [self clickLineWithIndex: index - 1];
+        }
     } else {
-        [self clickLineWithIndex: index - 1];
+        [self clickLineWithIndex: index];
     }
 }
 
@@ -135,7 +152,11 @@
     }
     NSInteger index = [self getCellIndexFromEvent:longPress];
     
-    if(index != 0) {
+    if(self.showCreateNewLine) {
+        if(index != 0) {
+            [self longPressLineWithIndex: index - 1];
+        }
+    } else {
         [self longPressLineWithIndex: index - 1];
     }
 }

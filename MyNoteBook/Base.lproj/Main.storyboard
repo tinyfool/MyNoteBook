@@ -94,7 +94,7 @@
         <!--GroupList-->
         <scene sceneID="vdi-qb-Ji8">
             <objects>
-                <tableViewController title="GroupList" id="aJR-Ng-LWc" sceneMemberID="viewController">
+                <tableViewController title="GroupList" id="aJR-Ng-LWc" customClass="GroupListController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="Kv4-1B-Rdm">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -104,7 +104,13 @@
                             <outlet property="delegate" destination="aJR-Ng-LWc" id="3Vn-5l-QYf"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Title" id="4N3-BV-TRd"/>
+                    <navigationItem key="navigationItem" title="分组列表" id="4N3-BV-TRd">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="GJy-HI-3QH">
+                            <connections>
+                                <action selector="clickAddGroup:" destination="aJR-Ng-LWc" id="ISq-2G-O04"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Uqb-zs-HbY" userLabel="First Responder" sceneMemberID="firstResponder"/>

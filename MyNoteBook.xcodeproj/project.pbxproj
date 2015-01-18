@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		D23C13AB1A69692B00284892 /* Group.m in Sources */ = {isa = PBXBuildFile; fileRef = D23C13AA1A69692B00284892 /* Group.m */; };
+		D255DA2B1A6BF84300FA0121 /* GroupListController.m in Sources */ = {isa = PBXBuildFile; fileRef = D255DA2A1A6BF84300FA0121 /* GroupListController.m */; };
 		D27A92AA1A65573300F7E546 /* MyNoteBook.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D2B9938B1A653B58000146E9 /* MyNoteBook.xcdatamodeld */; };
 		D27E030D1A655B2E00E2A3BC /* Note.m in Sources */ = {isa = PBXBuildFile; fileRef = D27E030C1A655B2E00E2A3BC /* Note.m */; };
 		D27E03121A65637300E2A3BC /* NoteListController.m in Sources */ = {isa = PBXBuildFile; fileRef = D27E03111A65637300E2A3BC /* NoteListController.m */; };
@@ -34,6 +35,8 @@
 /* Begin PBXFileReference section */
 		D23C13A91A69692B00284892 /* Group.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Group.h; sourceTree = "<group>"; };
 		D23C13AA1A69692B00284892 /* Group.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Group.m; sourceTree = "<group>"; };
+		D255DA291A6BF84300FA0121 /* GroupListController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GroupListController.h; sourceTree = "<group>"; };
+		D255DA2A1A6BF84300FA0121 /* GroupListController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GroupListController.m; sourceTree = "<group>"; };
 		D27E030B1A655B2E00E2A3BC /* Note.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Note.h; sourceTree = "<group>"; };
 		D27E030C1A655B2E00E2A3BC /* Note.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Note.m; sourceTree = "<group>"; };
 		D27E03101A65637300E2A3BC /* NoteListController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NoteListController.h; sourceTree = "<group>"; };
@@ -84,6 +87,8 @@
 				D27E03111A65637300E2A3BC /* NoteListController.m */,
 				D284BF7E1A6AE7DE003F3446 /* NoteCreatorController.h */,
 				D284BF7F1A6AE7DE003F3446 /* NoteCreatorController.m */,
+				D255DA291A6BF84300FA0121 /* GroupListController.h */,
+				D255DA2A1A6BF84300FA0121 /* GroupListController.m */,
 			);
 			path = Sections;
 			sourceTree = "<group>";
@@ -288,6 +293,7 @@
 				D27E03121A65637300E2A3BC /* NoteListController.m in Sources */,
 				D27E030D1A655B2E00E2A3BC /* Note.m in Sources */,
 				D23C13AB1A69692B00284892 /* Group.m in Sources */,
+				D255DA2B1A6BF84300FA0121 /* GroupListController.m in Sources */,
 				D284BF801A6AE7DE003F3446 /* NoteCreatorController.m in Sources */,
 				D27A92AA1A65573300F7E546 /* MyNoteBook.xcdatamodeld in Sources */,
 				D284BF7B1A6AC140003F3446 /* InfoFromModelTableViewController.m in Sources */,

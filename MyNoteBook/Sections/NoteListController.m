@@ -29,35 +29,7 @@
     [super viewDidLoad];
     Group *defaultGroup = [Group getDefaultGroup:[self getContext]];
     [self setCurrentGroup:defaultGroup];
-    
-    [self registerLongPressEvents];
 }
-
-
--(void) registerLongPressEvents
-{
-    UILongPressGestureRecognizer *longPress = [[UILongPressGestureRecognizer alloc]
-                                               initWithTarget:self
-                                               action:@selector(myHandleTableviewCellLongPressed:)];
-    
-    longPress.delegate = self;
-    longPress.minimumPressDuration = 1.0;
-    [self.tableView addGestureRecognizer:longPress];
-}
-
-- (void) myHandleTableviewCellLongPressed:(UILongPressGestureRecognizer *)gestureRecognizer {
-    if (gestureRecognizer.state == UIGestureRecognizerStateBegan) {
-        NSLog(@"UIGestureRecognizerStateBegan");
-    }
-    if (gestureRecognizer.state == UIGestureRecognizerStateChanged) {
-        NSLog(@"UIGestureRecognizerStateChanged");
-    }
-    
-    if (gestureRecognizer.state == UIGestureRecognizerStateEnded) {
-        NSLog(@"UIGestureRecognizerStateEnded");
-    }
-}
-
 
 -(void)setInfoToCell:(UITableViewCell *)cell from:(id)info
 {
