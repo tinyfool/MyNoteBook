@@ -46,8 +46,6 @@
 
 -(void)clickCreateLine
 {
-    NSLog(@"click create.");
-    
     Note *note = [NSEntityDescription
                   insertNewObjectForEntityForName: @"Note"
                   inManagedObjectContext: [self getContext]];
@@ -63,21 +61,17 @@
     [self.navigationController pushViewController:viewController animated:YES];
     
 }
--(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
-    NSLog(@"%@", segue.identifier);
+
+-(void)cancelCreateNote:(Note *)note
+{
+    [self.getContext deleteObject:note];
+    [self saveContext];
 }
 
--(void)reciveNote:(Note *)note wantsCreate:(BOOL)wantsCreate
+-(void)submitNoteEditOrCreate:(Note *)note
 {
-    if(!wantsCreate) {
-        [self.getContext deleteObject:note];
-    }
     [self saveContext];
-    
-    if(wantsCreate) {
-        NSLog(@"%@", [self.group listNotes]);
-        [self resetInfoArray:[self.group listNotes]];
-    }
+    [self resetInfoArray:[self.group listNotes]];
 }
 
 @end

@@ -50,7 +50,7 @@
 -(void)resetInfoArray:(NSArray *)infoArray
 {
     self.infoArray = infoArray;
-    [self.tableView reloadInputViews];
+    [self.tableView reloadData];
 }
 
 -(void)setInfoToCell:(UITableViewCell *)cell from:(id)info
@@ -89,7 +89,6 @@
     } else {
         [self setInfoToCell:cell from:self.infoArray[indexPath.row - 1]];
     }
-//    cell.textLabel.text = [(Note *)self.notes[indexPath.row] title];
     
     return cell;
 }

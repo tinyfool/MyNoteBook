@@ -12,6 +12,7 @@
 
 @interface NoteListController : InfoFromModelTableViewController
 
--(void)reciveNote:(Note *)note wantsCreate:(BOOL)wantsCreate;
+-(void)cancelCreateNote:(Note *)note;
+-(void)submitNoteEditOrCreate:(Note *)note;
 
 @end

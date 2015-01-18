@@ -78,7 +78,7 @@
 
 -(void)cancelAndExit
 {
-    [self.parent reciveNote: self.currentNote wantsCreate:NO];
+    [self.parent cancelCreateNote:self.currentNote];
     [self.navigationController popViewControllerAnimated:YES];
 }
 
@@ -89,7 +89,7 @@
         self.currentNote.content = self.contentField.text;
         self.currentNote.lastEditAt = [NSDate date];
         
-        [self.parent reciveNote: self.currentNote wantsCreate:YES];
+        [self.parent submitNoteEditOrCreate:self.currentNote];
         [self.navigationController popViewControllerAnimated:YES];
     }
 }
