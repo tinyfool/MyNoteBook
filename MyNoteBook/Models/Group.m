@@ -26,13 +26,13 @@
 
 -(NSArray *)listNotes
 {
-    NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"name" ascending:NO];
+    NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"createAt" ascending:NO];
     return [self.notes sortedArrayUsingDescriptors:[NSArray arrayWithObjects:sortDescriptor, nil]];
 }
 
--(BOOL)isDefaultGroup
++(BOOL)isDefaultGroup:(Group *)group
 {
-    return [self.name isEqualToString:DefaultGroupName];
+    return [group.name isEqualToString:DefaultGroupName];
 }
 
 +(BOOL) insertDefaultGroupIfFirstLaunch:(AppDelegate *) appDelegate
@@ -105,7 +105,10 @@
 
 +(NSArray *)listAllGroups:(NSManagedObjectContext *)context
 {
+    NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"createAt" ascending:NO];
     NSFetchRequest *request = [[NSFetchRequest alloc] initWithEntityName: @"Group"];
+    
+    [request setSortDescriptors:@[sortDescriptor]];
     
     NSError *error;
     NSArray *resultArray = [context executeFetchRequest:request error:&error];

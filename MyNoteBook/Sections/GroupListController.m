@@ -12,7 +12,7 @@
 @interface GroupListController()
 
 @property NSInteger deleteIndex;
-
+@property NoteListController *parent;
 @end
 
 @implementation GroupListController
@@ -20,6 +20,11 @@
 -(BOOL)showCreateNewLine
 {
     return NO;
+}
+
+-(void)valuesInitWith:(NoteListController *)parent
+{
+    self.parent = parent;
 }
 
 -(void)viewDidLoad
@@ -88,7 +93,7 @@
 -(void)longPressLineWithIndex:(NSInteger) index
 {
     Group *group = (Group *) self.infoArray[index];
-    if(group.isDefaultGroup) {
+    if([Group isDefaultGroup:group]) {
         [self showErrorNotifyMessage:@"不可以删除默认分组！"];
     } else {
         UIActionSheet *sheet=[[UIActionSheet alloc] initWithTitle:@"你确定要删除这个分组吗？\n删除之后，该分组及分组里的所有笔记将不复存在。该操作也无法撤销。"
@@ -99,6 +104,13 @@
         self.deleteIndex = index;
         [sheet showInView:self.view];
     }
+}
+
+-(void)clickLineWithIndex:(NSInteger)index
+{
+    Group *group = (Group *) self.infoArray[index];
+    [self.navigationController popViewControllerAnimated:YES];
+    [self.parent setCurrentGroup:group];
 }
 
 -(void)setInfoToCell:(UITableViewCell *)cell from:(id)info

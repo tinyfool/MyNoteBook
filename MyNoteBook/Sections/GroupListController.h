@@ -7,7 +7,10 @@
 //
 
 #import "InfoFromModelTableViewController.h"
+#import "NoteListController.h"
 
 @interface GroupListController : InfoFromModelTableViewController<UIAlertViewDelegate, UIActionSheetDelegate>
+
+-(void)valuesInitWith:(NoteListController *)parent;
 
 @end

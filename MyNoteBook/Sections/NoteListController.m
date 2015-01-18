@@ -13,6 +13,7 @@
 #import "Group.h"
 
 #import "NoteCreatorController.h"
+#import "GroupListController.h"
 
 @interface NoteListController()
 
@@ -36,6 +37,14 @@
     Note *note = (Note *)info;
     cell.textLabel.text = note.title;
     cell.detailTextLabel.text = note.content;
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([segue.identifier isEqualToString:@"showGroupListController"]) {
+        GroupListController *groupController = (GroupListController *) segue.destinationViewController;
+        [groupController valuesInitWith:self];
+    }
 }
 
 -(void)setCurrentGroup:(Group *)group

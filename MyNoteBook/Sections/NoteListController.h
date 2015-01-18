@@ -14,5 +14,6 @@
 
 -(void)cancelCreateNote:(Note *)note;
 -(void)submitNoteEditOrCreate:(Note *)note;
+-(void)setCurrentGroup:(Group *)group;
 
 @end
