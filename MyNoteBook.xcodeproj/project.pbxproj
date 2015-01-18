@@ -11,6 +11,8 @@
 		D27A92AA1A65573300F7E546 /* MyNoteBook.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D2B9938B1A653B58000146E9 /* MyNoteBook.xcdatamodeld */; };
 		D27E030D1A655B2E00E2A3BC /* Note.m in Sources */ = {isa = PBXBuildFile; fileRef = D27E030C1A655B2E00E2A3BC /* Note.m */; };
 		D27E03121A65637300E2A3BC /* NoteListController.m in Sources */ = {isa = PBXBuildFile; fileRef = D27E03111A65637300E2A3BC /* NoteListController.m */; };
+		D284BF7B1A6AC140003F3446 /* InfoFromModelTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D284BF7A1A6AC140003F3446 /* InfoFromModelTableViewController.m */; };
+		D284BF801A6AE7DE003F3446 /* NoteCreatorController.m in Sources */ = {isa = PBXBuildFile; fileRef = D284BF7F1A6AE7DE003F3446 /* NoteCreatorController.m */; };
 		D2B993871A653B58000146E9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D2B993861A653B58000146E9 /* main.m */; };
 		D2B9938A1A653B58000146E9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D2B993891A653B58000146E9 /* AppDelegate.m */; };
 		D2B993931A653B58000146E9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D2B993911A653B58000146E9 /* Main.storyboard */; };
@@ -36,6 +38,10 @@
 		D27E030C1A655B2E00E2A3BC /* Note.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Note.m; sourceTree = "<group>"; };
 		D27E03101A65637300E2A3BC /* NoteListController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NoteListController.h; sourceTree = "<group>"; };
 		D27E03111A65637300E2A3BC /* NoteListController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NoteListController.m; sourceTree = "<group>"; };
+		D284BF791A6AC140003F3446 /* InfoFromModelTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InfoFromModelTableViewController.h; sourceTree = "<group>"; };
+		D284BF7A1A6AC140003F3446 /* InfoFromModelTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InfoFromModelTableViewController.m; sourceTree = "<group>"; };
+		D284BF7E1A6AE7DE003F3446 /* NoteCreatorController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NoteCreatorController.h; sourceTree = "<group>"; };
+		D284BF7F1A6AE7DE003F3446 /* NoteCreatorController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NoteCreatorController.m; sourceTree = "<group>"; };
 		D2B993811A653B58000146E9 /* MyNoteBook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyNoteBook.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2B993851A653B58000146E9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D2B993861A653B58000146E9 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -76,6 +82,8 @@
 				D2B993961A653B58000146E9 /* LaunchScreen.xib */,
 				D27E03101A65637300E2A3BC /* NoteListController.h */,
 				D27E03111A65637300E2A3BC /* NoteListController.m */,
+				D284BF7E1A6AE7DE003F3446 /* NoteCreatorController.h */,
+				D284BF7F1A6AE7DE003F3446 /* NoteCreatorController.m */,
 			);
 			path = Sections;
 			sourceTree = "<group>";
@@ -100,6 +108,15 @@
 			path = AppDelegate;
 			sourceTree = "<group>";
 		};
+		D284BF6F1A6ABFDC003F3446 /* General */ = {
+			isa = PBXGroup;
+			children = (
+				D284BF791A6AC140003F3446 /* InfoFromModelTableViewController.h */,
+				D284BF7A1A6AC140003F3446 /* InfoFromModelTableViewController.m */,
+			);
+			path = General;
+			sourceTree = "<group>";
+		};
 		D2B993781A653B58000146E9 = {
 			isa = PBXGroup;
 			children = (
@@ -121,6 +138,7 @@
 		D2B993831A653B58000146E9 /* MyNoteBook */ = {
 			isa = PBXGroup;
 			children = (
+				D284BF6F1A6ABFDC003F3446 /* General */,
 				D2C64F041A66B15000F62879 /* Macro */,
 				D2B993941A653B58000146E9 /* Images.xcassets */,
 				D2B9938B1A653B58000146E9 /* MyNoteBook.xcdatamodeld */,
@@ -270,7 +288,9 @@
 				D27E03121A65637300E2A3BC /* NoteListController.m in Sources */,
 				D27E030D1A655B2E00E2A3BC /* Note.m in Sources */,
 				D23C13AB1A69692B00284892 /* Group.m in Sources */,
+				D284BF801A6AE7DE003F3446 /* NoteCreatorController.m in Sources */,
 				D27A92AA1A65573300F7E546 /* MyNoteBook.xcdatamodeld in Sources */,
+				D284BF7B1A6AC140003F3446 /* InfoFromModelTableViewController.m in Sources */,
 				D2B993871A653B58000146E9 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -7,7 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "InfoFromModelTableViewController.h"
+#import "Note.h"
 
-@interface NoteListController : UITableViewController
+@interface NoteListController : InfoFromModelTableViewController
+
+-(void)reciveNote:(Note *)note wantsCreate:(BOOL)wantsCreate;
 
 @end
