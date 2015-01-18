@@ -9,6 +9,12 @@
 #import "GroupListController.h"
 #import "Group.h"
 
+@interface GroupListController()
+
+@property NSInteger deleteIndex;
+
+@end
+
 @implementation GroupListController
 
 -(BOOL)showCreateNewLine
@@ -35,8 +41,8 @@
 }
 
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
+    
     //input dialog closed.
-    NSLog(@"Entered: %lu %@", buttonIndex, [[alertView textFieldAtIndex:0] text]);
     
     if(buttonIndex) {
         NSString *name = [[alertView textFieldAtIndex:0] text];
@@ -62,6 +68,7 @@
                                             cancelButtonTitle:nil
                                        destructiveButtonTitle:@"知道了"
                                             otherButtonTitles: nil];
+    self.deleteIndex = -1;
     [sheet showInView:self.view];
 }
 
@@ -69,6 +76,29 @@
 {
     //notify error dialog closed.
     
+    if(self.deleteIndex != -1 && !buttonIndex) {
+        NSLog(@"start to delete '%@' of index %lu.", [(Group *) self.infoArray[self.deleteIndex] name], self.deleteIndex);
+        [[self getContext] deleteObject:(Group *) self.infoArray[self.deleteIndex]];
+        [self saveContext];
+        
+        [self resetInfoArray:[Group listAllGroups:[self getContext]]];
+    }
+}
+
+-(void)longPressLineWithIndex:(NSInteger) index
+{
+    Group *group = (Group *) self.infoArray[index];
+    if(group.isDefaultGroup) {
+        [self showErrorNotifyMessage:@"不可以删除默认分组！"];
+    } else {
+        UIActionSheet *sheet=[[UIActionSheet alloc] initWithTitle:@"你确定要删除这个分组吗？\n删除之后，该分组及分组里的所有笔记将不复存在。该操作也无法撤销。"
+                                                         delegate:self
+                                                cancelButtonTitle:@"取消"
+                                           destructiveButtonTitle:@"确认删除"
+                                                otherButtonTitles: nil];
+        self.deleteIndex = index;
+        [sheet showInView:self.view];
+    }
 }
 
 -(void)setInfoToCell:(UITableViewCell *)cell from:(id)info

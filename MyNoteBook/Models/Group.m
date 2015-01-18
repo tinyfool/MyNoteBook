@@ -30,6 +30,11 @@
     return [self.notes sortedArrayUsingDescriptors:[NSArray arrayWithObjects:sortDescriptor, nil]];
 }
 
+-(BOOL)isDefaultGroup
+{
+    return [self.name isEqualToString:DefaultGroupName];
+}
+
 +(BOOL) insertDefaultGroupIfFirstLaunch:(AppDelegate *) appDelegate
 {
     NSManagedObjectContext *context = [appDelegate managedObjectContext];

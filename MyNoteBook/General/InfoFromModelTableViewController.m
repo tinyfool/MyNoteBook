@@ -157,7 +157,7 @@
             [self longPressLineWithIndex: index - 1];
         }
     } else {
-        [self longPressLineWithIndex: index - 1];
+        [self longPressLineWithIndex: index];
     }
 }
 
