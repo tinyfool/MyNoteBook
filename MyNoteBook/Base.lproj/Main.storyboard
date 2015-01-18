@@ -54,18 +54,17 @@
                                 <textInputTraits key="textInputTraits" spellCheckingType="no"/>
                             </textField>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="la8-g7-JRh">
-                                <rect key="frame" x="12" y="109" width="390" height="600"/>
+                                <rect key="frame" x="12" y="120" width="390" height="553"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="centerX" secondItem="la8-g7-JRh" secondAttribute="centerX" id="MkZ-r0-YvU"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="la8-g7-JRh" secondAttribute="trailing" constant="-4" id="P4W-TJ-0ee"/>
-                            <constraint firstAttribute="centerX" secondItem="1PI-MX-IAb" secondAttribute="centerX" id="P6Y-FD-HXr"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="1PI-MX-IAb" secondAttribute="trailing" constant="-4" id="VGF-xl-gkJ"/>
-                            <constraint firstItem="la8-g7-JRh" firstAttribute="height" secondItem="TZS-Fu-bn1" secondAttribute="height" id="mW7-qE-ORd"/>
+                            <constraint firstItem="1PI-MX-IAb" firstAttribute="leading" secondItem="TZS-Fu-bn1" secondAttribute="leadingMargin" constant="-4" id="ChI-6t-rqn"/>
+                            <constraint firstItem="1PI-MX-IAb" firstAttribute="width" secondItem="TZS-Fu-bn1" secondAttribute="width" id="QJx-x9-p5t"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="1PI-MX-IAb" secondAttribute="trailing" constant="-4" id="ScM-5V-l0y"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="la8-g7-JRh" secondAttribute="trailing" constant="-4" id="Wl4-0g-svi"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="ToBeFilled" id="YpQ-zV-zcA">
@@ -89,7 +88,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FI1-Dc-TTH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2999" y="403"/>
+            <point key="canvasLocation" x="2999" y="358"/>
         </scene>
         <!--GroupList-->
         <scene sceneID="vdi-qb-Ji8">

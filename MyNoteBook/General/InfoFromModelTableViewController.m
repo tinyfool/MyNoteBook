@@ -95,7 +95,7 @@
     
     if(cell == nil)
     {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle
                                       reuseIdentifier:SimpleTableIdentifier];
         
         [self registerEventsFromCell:cell indexPath:indexPath];
@@ -126,8 +126,6 @@
                                           initWithTarget:self action:@selector(handleLongPress:)];
     lpgr.minimumPressDuration = 1.0;
     [cell addGestureRecognizer:lpgr];
-    
-    cell.selectionStyle = UITableViewCellSelectionStyleNone;
 }
 
 -(void)handleCellTapped:(UITapGestureRecognizer *)tap
