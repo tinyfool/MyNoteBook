@@ -10,11 +10,14 @@
 
 @interface InfoFromModelTableViewController : UITableViewController
 
+@property (readonly) NSArray *infoArray;
+
 -(NSManagedObjectContext *) getContext;
 -(void)saveContext;
 -(void)resetInfoArray:(NSArray *)infoArray;
 -(void)setInfoToCell:(UITableViewCell *)cell from:(id)info;
 -(void)clickCreateLine;
 -(void)clickLineWithIndex:(NSInteger)index;
+-(void)longPressLineWithIndex:(NSInteger) index;
 
 @end

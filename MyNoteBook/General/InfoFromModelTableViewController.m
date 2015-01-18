@@ -22,16 +22,16 @@
 
 @implementation InfoFromModelTableViewController
 
--(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    NSInteger index = indexPath.row;
-    if(index == 0) {
-        [self clickCreateLine];
-    } else {
-        [self clickLineWithIndex: index - 1];
-    }
-}
+//-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+//{
+//    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+//    NSInteger index = indexPath.row;
+//    if(index == 0) {
+//        [self clickCreateLine];
+//    } else {
+//        [self clickLineWithIndex: index - 1];
+//    }
+//}
 
 -(void)saveContext
 {
@@ -68,6 +68,11 @@
     //To be override.
 }
 
+-(void)longPressLineWithIndex:(NSInteger) index
+{
+    //To be override.
+}
+
 -(NSManagedObjectContext *) getContext
 {
     AppDelegate *appDelegate = [UIApplication sharedApplication].delegate;
@@ -83,6 +88,8 @@
     {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault
                                       reuseIdentifier:SimpleTableIdentifier];
+        
+        [self registerEventsFromCell:cell indexPath:indexPath];
     }
     if(indexPath.row == 0) {
         [self setCreateToCell:cell];
@@ -91,6 +98,53 @@
     }
     
     return cell;
+}
+
+-(void)registerEventsFromCell:(UITableViewCell *)cell indexPath:(NSIndexPath *)indexPath
+{
+    UITapGestureRecognizer *tapGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleCellTapped:)];
+    tapGestureRecognizer.numberOfTapsRequired = 1;
+    tapGestureRecognizer.numberOfTouchesRequired = 1;
+    cell.tag = indexPath.row;
+    [cell addGestureRecognizer:tapGestureRecognizer];
+    
+    
+    UILongPressGestureRecognizer *lpgr = [[UILongPressGestureRecognizer alloc]
+                                          initWithTarget:self action:@selector(handleLongPress:)];
+    lpgr.minimumPressDuration = 1.0;
+    [cell addGestureRecognizer:lpgr];
+    
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
+}
+
+-(void)handleCellTapped:(UITapGestureRecognizer *)tap
+{
+    NSInteger index = [self getCellIndexFromEvent:tap];
+    
+    if(index == 0) {
+        [self clickCreateLine];
+    } else {
+        [self clickLineWithIndex: index - 1];
+    }
+}
+
+-(void)handleLongPress:(UILongPressGestureRecognizer *)longPress
+{
+    if(longPress.state != UIGestureRecognizerStateBegan) {
+        return;
+    }
+    NSInteger index = [self getCellIndexFromEvent:longPress];
+    
+    if(index != 0) {
+        [self longPressLineWithIndex: index - 1];
+    }
+}
+
+-(NSInteger)getCellIndexFromEvent:(UIGestureRecognizer *)tapEvent
+{
+    CGPoint touchPoint = [tapEvent locationInView:self.view];
+    NSIndexPath* indexPath = [self.tableView indexPathForRowAtPoint:touchPoint];
+    return indexPath.row;
 }
 
 -(void)setCreateToCell:(UITableViewCell *)cell

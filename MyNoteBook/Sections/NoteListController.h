@@ -10,7 +10,7 @@
 #import "InfoFromModelTableViewController.h"
 #import "Note.h"
 
-@interface NoteListController : InfoFromModelTableViewController
+@interface NoteListController : InfoFromModelTableViewController<UIGestureRecognizerDelegate, UIActionSheetDelegate>
 
 -(void)cancelCreateNote:(Note *)note;
 -(void)submitNoteEditOrCreate:(Note *)note;

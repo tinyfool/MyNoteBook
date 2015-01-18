@@ -71,14 +71,15 @@
 
 -(BOOL)hasEditContent
 {
-    NSLog(@"- '%@' '%@'", self.titleField.text.description, self.oldTitle.description);
     return  ![self.titleField.text.description isEqualToString: self.oldTitle] ||
             ![self.contentField.text.description isEqualToString:self.oldContent];
 }
 
 -(void)cancelAndExit
 {
-    [self.parent cancelCreateNote:self.currentNote];
+    if(self.willCreateNew) {
+        [self.parent cancelCreateNote:self.currentNote];
+    }
     [self.navigationController popViewControllerAnimated:YES];
 }
 
