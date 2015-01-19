@@ -55,8 +55,11 @@
             NSLog(@"error: %@", error.localizedDescription);
             return NO;
         }
+        return YES;
+        
+    } else {
+        return NO;
     }
-    return YES;
 }
 
 +(Group *) createGroupWithName:(NSString *)name inContext:(NSManagedObjectContext *)context
